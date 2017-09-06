@@ -512,4 +512,8 @@
     <string name="ringtone_focus_mode_title">Ringtone focus mode</string>
     <string name="ringtone_focus_mode_dynamic">Headset (If media is playing)</string>
     <string name="ringtone_focus_mode_stock">Speaker and headset</string>
+
+    <!-- QS footer warnings -->
+    <string name="qs_footer_warnings_title">QS footer warnings</string>
+    <string name="qs_footer_warnings_summary">Display a warning at bottom of QS panel when network is monitored by external apps or vpn</string>
 </resources>
