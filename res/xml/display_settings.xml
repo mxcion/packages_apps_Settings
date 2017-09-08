@@ -166,6 +166,18 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:title="@string/customization_category_title">
+
+	<Preference
+            android:key="systemui_tuner_statusbar"
+            android:title="@string/statusbar_items_title" >
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.android.systemui"
+                android:targetClass="com.android.systemui.tuner.StatusbarItemsActivity" />
+        </Preference>
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="theme_customization_category"
         android:title="@string/theme_customization_category"
         android:order="1200"> <!-- Incremented by 100 from last order (i.e. 1100) -->
