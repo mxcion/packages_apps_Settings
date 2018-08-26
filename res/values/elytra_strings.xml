@@ -41,4 +41,5 @@
     <!-- elytraOS version -->
     <string name="elytra_version">elytraOS version</string>
     <string name="elytra_version_default">Unknown</string>
+    <string name="build_date">Build date</string>
 </resources>
