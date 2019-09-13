@@ -37,4 +37,8 @@
     <string name="selinux_status_disabled">Disabled</string>
     <string name="selinux_status_permissive">Permissive</string>
     <string name="selinux_status_enforcing">Enforcing</string>
+
+    <!-- elytraOS version -->
+    <string name="elytra_version">elytraOS version</string>
+    <string name="elytra_version_default">Unknown</string>
 </resources>

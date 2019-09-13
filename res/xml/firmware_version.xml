@@ -30,6 +30,14 @@
         settings:searchable="false"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionDetailPreferenceController"/>
 
+    <!-- elytraOS version -->
+    <Preference
+        android:key="elytra_version"
+        android:title="@string/elytra_version"
+        android:summary="@string/summary_placeholder"
+        settings:enableCopying="true"
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.ElytraVersionPreferenceController"/>
+
     <!-- elytraOS maintainer -->
     <Preference
         android:key="maintainer"
