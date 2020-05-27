@@ -269,4 +269,8 @@
     <string name="legacy_wfd_video_mode_720p_60fps">720p 60fps</string>
     <string name="legacy_wfd_video_mode_1080p_30fps">1080p 30fps</string>
     <string name="legacy_wfd_video_mode_1080p_60fps">1080p 60fps</string>
+
+    <!-- Per-app data restrictions -->
+    <string name="data_usage_app_restrict_all">Allow network access</string>
+    <string name="data_usage_app_restrict_all_summary">Enable network usage</string>
 </resources>
