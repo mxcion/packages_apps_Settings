@@ -24,5 +24,6 @@
 
     <!-- elytraOS maintainer -->
     <string name="maintainer">Maintainer</string>
+    <string name="elytra_maintainer">Unofficial Maintainer</string>
 
 </resources>
