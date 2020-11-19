@@ -35,10 +35,13 @@ import com.android.internal.logging.nano.MetricsProto;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settingslib.search.SearchIndexable;
 
 import com.elytra.support.preferences.SecureSettingMasterSwitchPreference;
 import com.elytra.support.preferences.SecureSettingSwitchPreference;
 
+@SearchIndexable
 public class DisplayCustomizations extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
@@ -158,4 +161,7 @@ public class DisplayCustomizations extends SettingsPreferenceFragment
     public int getMetricsCategory() {
        return MetricsProto.MetricsEvent.ELYTRA;
     }
+
+    public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider(R.xml.display_customizations);
 }
