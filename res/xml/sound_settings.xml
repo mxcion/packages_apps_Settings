@@ -98,7 +98,7 @@
         settings:controller="com.android.settings.notification.LinkedVolumesPreferenceController"/>
 
     <!-- Increasing ring -->
-    <com.awaken.support.preferences.SystemSettingSwitchPreference
+    <com.elytra.support.preferences.SystemSettingSwitchPreference
         android:key="increasing_ring"
         android:title="@string/increasing_ring_volume_option_title"
         android:defaultValue="false"
@@ -273,6 +273,26 @@
     <SwitchPreference
         android:key="screenshot_shutter_sound"
         android:title="@string/screenshot_shutter_sound_title" />
+
+    <PreferenceCategory
+        android:key="incall_vib_options"
+        android:title="@string/incall_vibration_category" >
+
+         <com.elytra.support.preferences.SystemSettingSwitchPreference
+            android:key="vibrate_on_connect"
+            android:title="@string/incall_vibrate_connect_title"
+            android:defaultValue="false" />
+
+         <com.elytra.support.preferences.SystemSettingSwitchPreference
+            android:key="vibrate_on_callwaiting"
+            android:title="@string/incall_vibrate_call_wait_title"
+            android:defaultValue="false" />
+
+         <com.elytra.support.preferences.SystemSettingSwitchPreference
+            android:key="vibrate_on_disconnect"
+            android:title="@string/incall_vibrate_disconnect_title"
+            android:defaultValue="false" />
+    </PreferenceCategory>
 
     <Preference
         android:key="sound_work_settings"
