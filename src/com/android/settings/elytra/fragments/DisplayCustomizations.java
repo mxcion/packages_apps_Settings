@@ -22,6 +22,7 @@ import android.content.ContentResolver;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.UserHandle;
+import android.provider.DeviceConfig;
 import android.provider.Settings;
 
 import androidx.preference.ListPreference;
@@ -51,6 +52,7 @@ public class DisplayCustomizations extends SettingsPreferenceFragment
     private static final String PREF_STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
     private static final String PREF_STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
     private static final String BRIGHTNESS_SLIDER = "qs_show_brightness";
+    private static final String LOCATION_DEVICE_CONFIG = "location_indicators_enabled";
 
     private static final int BATTERY_STYLE_PORTRAIT = 0;
     private static final int BATTERY_STYLE_TEXT = 4;
@@ -60,6 +62,7 @@ public class DisplayCustomizations extends SettingsPreferenceFragment
     //private static final int BATTERY_PERCENT_SHOW_OUTSIDE = 2;
 
     private static final String COBINED_STATUSBAR_ICONS = "show_combined_status_bar_signal_icons";
+    private static final String LOCATION_INDICATOR = "enable_location_privacy_indicator";
 
     private SecureSettingMasterSwitchPreference mBrightnessSlider;
 
@@ -120,6 +123,13 @@ public class DisplayCustomizations extends SettingsPreferenceFragment
         enabled = Settings.Secure.getInt(resolver,
                 BRIGHTNESS_SLIDER, 1) == 1;
         mBrightnessSlider.setChecked(enabled);
+
+        SecureSettingSwitchPreference locationIndicator = findPreference(LOCATION_INDICATOR);
+        def = DeviceConfig.getBoolean(DeviceConfig.NAMESPACE_PRIVACY,
+                LOCATION_DEVICE_CONFIG, false);
+        locationIndicator.setDefaultValue(def);
+        locationIndicator.setChecked(Settings.Secure.getInt(resolver,
+                LOCATION_INDICATOR, def ? 1 : 0) == 1);
     }
 
     @Override
