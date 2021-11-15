@@ -21,10 +21,10 @@
     android:title="@string/firmware_version"
     settings:keywords="@string/keywords_android_version">
 
-<PreferenceScreen
-    android:layout="@layout/elytra_logo_layout"
-    android:key="elytra_logo"
-    android:selectable="false"/>
+    <com.android.settingslib.widget.LayoutPreference
+        android:key="arrow_logo"
+        android:layout="@layout/elytra_logo"
+        android:selectable="false"/>
 
     <!-- Android version -->
     <Preference
