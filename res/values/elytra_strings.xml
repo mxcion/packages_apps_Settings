@@ -337,4 +337,8 @@
     <!-- Small clock -->
     <string name="small_clock">Always use small clock</string>
     <string name="small_clock_summary">Fully disable big clock and always use small clock</string>
+
+    <!-- Theme -->
+    <string name="pitch_colors">Pitch black theme</string>
+    <string name="pitch_colors_summary">Pitch black theme for Settings, SystemUI, etc</string>
 </resources>
