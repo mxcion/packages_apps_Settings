@@ -135,6 +135,8 @@ public class DisplaySettings extends DashboardFragment implements OnPreferenceCh
         controllers.add(new OverlayCategoryPreferenceController(context,
                 "android.theme.customization.font"));
         controllers.add(new OverlayCategoryPreferenceController(context,
+                "android.theme.customization.adaptive_icon_shape"));
+        controllers.add(new OverlayCategoryPreferenceController(context,
                 "android.theme.customization.icon_pack"));
         return controllers;
     }
