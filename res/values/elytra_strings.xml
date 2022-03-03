@@ -540,4 +540,10 @@
     <!-- Quick Settings quick pulldown -->
     <string name="quick_settings_quick_pull_down_title">Quick QS pulldown</string>
     <string name="quick_settings_quick_pull_down_summary">Pull down statusbar from right side to expand quick settings</string>
+
+    <!-- Volume key cursor control  -->
+    <string name="volume_key_cursor_control_title">Volume cursor control</string>
+    <string name="volume_key_cursor_control_disabled">Disabled</string>
+    <string name="volume_key_cursor_control_left">up - left, down - right</string>
+    <string name="volume_key_cursor_control_right">up - right, down - left</string>
 </resources>
