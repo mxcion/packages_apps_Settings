@@ -473,6 +473,7 @@
     <string name="charging_vibro_title">Charging vibration</string>
 
     <!-- Monet engine -->
+    <string name="theme_category_title">Theme</string>
     <string name="monet_engine_settings_title">Monet engine</string>
     <string name="monet_engine_settings_summary"> Adjust accent color, colorfulness and brightness</string>
     <string name="accurate_shades_title">Use accurate shades</string>

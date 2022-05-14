@@ -62,6 +62,18 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="theme_category"
+        android:title="@string/theme_category_title" >
+
+        <!-- Monet -->
+        <Preference
+            android:key="monet_settings"
+            android:title="@string/monet_engine_settings_title"
+            android:summary="@string/monet_engine_settings_summary"
+            android:fragment="com.android.settings.elytra.fragments.MonetSettings" />
+     </PreferenceCategory>
+
+        <PreferenceCategory
         android:key="statusbar_category"
         android:title="@string/statusbar_category_title">
 
