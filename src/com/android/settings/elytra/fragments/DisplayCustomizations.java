@@ -47,30 +47,21 @@ public class DisplayCustomizations extends SettingsPreferenceFragment
     private static final String TAG = "Display Customizations";
     private static final String SYSTEMUI_PACKAGE = "com.android.systemui";
     private static final String CONFIG_RESOURCE_NAME = "flag_combined_status_bar_signal_icons";
-    private static final String PREF_STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
-    private static final String PREF_STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
     private static final String BRIGHTNESS_SLIDER = "qs_show_brightness";
     private static final String KEY_EDGE_LIGHTNING = "pulse_ambient_light";
     private static final String KEY_NETWORK_TRAFFIC = "network_traffic_state";
     private static final String LOCATION_DEVICE_CONFIG = "location_indicators_enabled";
+    private static final String CAMERA_DEVICE_CONFIG = "camera_indicators_enabled";
 
-    private static final int BATTERY_STYLE_PORTRAIT = 0;
-    private static final int BATTERY_STYLE_TEXT = 4;
-    private static final int BATTERY_STYLE_HIDDEN = 5;
-    private static final int BATTERY_PERCENT_HIDDEN = 0;
-    //private static final int BATTERY_PERCENT_SHOW_INSIDE = 1;
-    //private static final int BATTERY_PERCENT_SHOW_OUTSIDE = 2;
 
     private static final String COBINED_STATUSBAR_ICONS = "show_combined_status_bar_signal_icons";
     private static final String LOCATION_INDICATOR = "enable_location_privacy_indicator";
+    private static final String CAMERA_INDICATOR = "enable_camera_privacy_indicator";
 
     private SecureSettingMasterSwitchPreference mBrightnessSlider;
     private SystemSettingMasterSwitchPreference mEdgeLightning;
     private SystemSettingMasterSwitchPreference mNetworkTraffic;
 
-    private ListPreference mBatteryPercent;
-    private ListPreference mBatteryStyle;
-    private int mBatteryPercentValue;
     private SecureSettingSwitchPreference mCombinedIcons;
 
     @Override
@@ -79,24 +70,6 @@ public class DisplayCustomizations extends SettingsPreferenceFragment
         addPreferencesFromResource(R.xml.display_customizations);
         PreferenceScreen prefSet = getPreferenceScreen();
         final ContentResolver resolver = getActivity().getContentResolver();
-
-        int batterystyle = Settings.System.getIntForUser(getContentResolver(),
-                Settings.System.STATUS_BAR_BATTERY_STYLE, BATTERY_STYLE_PORTRAIT, UserHandle.USER_CURRENT);
-
-        mBatteryStyle = (ListPreference) findPreference(PREF_STATUS_BAR_BATTERY_STYLE);
-        mBatteryStyle.setValue(String.valueOf(batterystyle));
-        mBatteryStyle.setSummary(mBatteryStyle.getEntry());
-        mBatteryStyle.setOnPreferenceChangeListener(this);
-
-        mBatteryPercentValue = Settings.System.getIntForUser(getContentResolver(),
-                Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, BATTERY_PERCENT_HIDDEN, UserHandle.USER_CURRENT);
-
-        mBatteryPercent = (ListPreference) findPreference(PREF_STATUS_BAR_SHOW_BATTERY_PERCENT);
-        mBatteryPercent.setValue(String.valueOf(mBatteryPercentValue));
-        mBatteryPercent.setSummary(mBatteryPercent.getEntry());
-        mBatteryPercent.setOnPreferenceChangeListener(this);
-        mBatteryPercent.setEnabled(
-                batterystyle != BATTERY_STYLE_TEXT && batterystyle != BATTERY_STYLE_HIDDEN);
 
         mCombinedIcons = (SecureSettingSwitchPreference)
                 findPreference(COBINED_STATUSBAR_ICONS);
@@ -146,30 +119,19 @@ public class DisplayCustomizations extends SettingsPreferenceFragment
         locationIndicator.setDefaultValue(def);
         locationIndicator.setChecked(Settings.Secure.getInt(resolver,
                 LOCATION_INDICATOR, def ? 1 : 0) == 1);
+
+        SecureSettingSwitchPreference cameraIndicator = findPreference(CAMERA_INDICATOR);
+        def = DeviceConfig.getBoolean(DeviceConfig.NAMESPACE_PRIVACY,
+                CAMERA_DEVICE_CONFIG, false);
+        cameraIndicator.setDefaultValue(def);
+        cameraIndicator.setChecked(Settings.Secure.getInt(resolver,
+                CAMERA_INDICATOR, def ? 1 : 0) == 1);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mBatteryStyle) {
-            int batterystyle = Integer.parseInt((String) newValue);
-            Settings.System.putIntForUser(resolver,
-                Settings.System.STATUS_BAR_BATTERY_STYLE, batterystyle,
-                UserHandle.USER_CURRENT);
-            int index = mBatteryStyle.findIndexOfValue((String) newValue);
-            mBatteryStyle.setSummary(mBatteryStyle.getEntries()[index]);
-            mBatteryPercent.setEnabled(
-                    batterystyle != BATTERY_STYLE_TEXT && batterystyle != BATTERY_STYLE_HIDDEN);
-            return true;
-        } else if (preference == mBatteryPercent) {
-            mBatteryPercentValue = Integer.parseInt((String) newValue);
-            Settings.System.putIntForUser(resolver,
-                    Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, mBatteryPercentValue,
-                    UserHandle.USER_CURRENT);
-            int index = mBatteryPercent.findIndexOfValue((String) newValue);
-            mBatteryPercent.setSummary(mBatteryPercent.getEntries()[index]);
-            return true;
-        } else if (preference == mCombinedIcons) {
+         if (preference == mCombinedIcons) {
             boolean enabled = (boolean) newValue;
             Settings.Secure.putInt(resolver,
                     COBINED_STATUSBAR_ICONS, enabled ? 1 : 0);
