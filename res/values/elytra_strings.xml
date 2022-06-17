@@ -142,6 +142,10 @@
     <string name="clock_date_right">Right of time</string>
     <string name="clock_date_left">Left of time</string>
     <string name="clock_date_position">Date position</string>
+    <string name="status_bar_clock_auto_hide_title">Auto-hide clock</string>
+    <string name="status_bar_clock_auto_hide_summary">Hide and show clock at regular intervals of time</string>
+    <string name="status_bar_clock_auto_hide_hdur_title">Hide duration</string>
+    <string name="status_bar_clock_auto_hide_sdur_title">Show duration</string>
 
     <!-- Volume rocker wake -->
     <string name="volume_rocker_wake_title">Volume wake</string>
@@ -450,12 +454,19 @@
     <string name="button_settings_activity_title">3-Button Navigation Settings</string>
     <string name="navigation_bar_inverse_title">Inverse Layout</string>
     <string name="navigation_bar_inverse_summary">Swipe positions between back and recents</string>
+    <string name="navbar_layout_title">Layout</string>
+    <string name="navbar_layout_normal">Normal</string>
+    <string name="navbar_layout_compact">Compact</string>
+    <string name="navbar_layout_leftleaning">Left-leaning</string>
+    <string name="navbar_layout_rightleaning">Right-leaning</string>
 
     <!-- QuickSettings haptic feedback -->
     <string name="quick_settings_vibrate_title">Vibrate on touch</string>
     <string name="quick_settings_vibrate_summary">Vibrate when touching QS tiles</string>
 
-    <!-- Location privacy indicator -->
+    <!-- Privacy Indicator -->
+    <string name="mic_camera_privacy_indicator_title">Mic and camera privacy indicator</string>
+    <string name="mic_camera_privacy_indicator_summary">Show separate indicator when an any app uses mic or camera</string>
     <string name="location_privacy_indicator_title">Location access indicator</string>
     <string name="location_privacy_indicator_summary_on">Show location in the privacy chip</string>
     <string name="location_privacy_indicator_summary_off">Show location in status bar icons</string>
@@ -483,4 +494,80 @@
     <string name="chroma_factor_title">Colorfulness</string>
     <string name="linear_lightness_title">Use a custom lightness scale</string>
     <string name="white_luminance_title">Brightness</string>
+
+    <!-- Battery light -->
+    <string name="battery_light_settings">Battery charging light</string>
+    <string name="battery_light_summary">Battery light behaviour while on DND, low battery</string>
+    <string name="battery_light_enable">Enable battery light</string>
+    <string name="battery_full_light_enabled">Battery light when full charged</string>
+    <string name="battery_light_allow_on_dnd_title">Battery light in Do Not Disturb mode</string>
+    <string name="battery_light_low_blinking_title">Blinking light on low battery</string>
+    <string name="battery_light_cat">Battery light color when charging</string>
+    <string name="battery_light_low_color">Low battery</string>
+    <string name="battery_light_medium_color">Medium battery</string>
+    <string name="battery_light_full_color">Almost full battery</string>
+    <string name="battery_light_reallyfull_color">Full (100) battery</string>
+
+    <!-- Per-app volume control -->
+    <string name="app_volume">App volume</string>
+    <string name="app_volume_title">Per-app volume control</string>
+    <string name="app_volume_summary">Allow to set different volume levels for each app</string>
+
+    <!-- Notch: Full screen apps -->
+    <string name="display_cutout_force_fullscreen_title">Full screen apps</string>
+    <string name="display_cutout_force_fullscreen_summary">Force apps to ignore notch space</string>
+    <string name="search">Search</string>
+    <string name="search_apps">Search apps</string>
+
+    <!-- Headset ringtone audio focus -->
+    <string name="ringtone_focus_mode_title">Ringtone focus mode</string>
+    <string name="ringtone_focus_mode_dynamic">Headset (If media is playing)</string>
+    <string name="ringtone_focus_mode_stock">Speaker and headset</string>
+
+    <!-- QS footer warnings -->
+    <string name="qs_footer_warnings_title">QS footer warnings</string>
+    <string name="qs_footer_warnings_summary">Display a warning at bottom of QS panel when network is monitored by external apps or vpn</string>
+
+    <!-- Battery Temperature -->
+    <string name="battery_temp">Battery temperature</string>
+
+    <!-- Back Gestures -->
+    <string name="smallest_tick_label">Off</string>
+    <string name="greatest_tick_label">Half screen</string>
+    <string name="gesture_back_deadzone_label">Dead zone</string>
+    <string name="back_sensitivity_dialog_message_cust">Use the first and second seekbar to configure back swipe sensitivity, the last seekbar to set a dead area on top of the screen where the swipe cannot be triggered, to avoid conflicts with in-app gestures.</string>
+
+    <!-- Quick Settings quick pulldown -->
+    <string name="quick_settings_quick_pull_down_title">Quick QS pulldown</string>
+    <string name="quick_settings_quick_pull_down_summary">Pull down statusbar from right side to expand quick settings</string>
+
+    <!-- Volume key cursor control  -->
+    <string name="volume_key_cursor_control_title">Volume cursor control</string>
+    <string name="volume_key_cursor_control_disabled">Disabled</string>
+    <string name="volume_key_cursor_control_left">up - left, down - right</string>
+    <string name="volume_key_cursor_control_right">up - right, down - left</string>
+
+    <!-- Battery health -->
+    <string name="battery_health_title">Battery health</string>
+
+    <!-- QS media player -->
+    <string name="qs_media_controls_title">Media player</string>
+    <string name="qs_media_controls_summary_on">Show media player in QS\nRequires a SystemUI restart</string>
+    <string name="qs_media_controls_summary_off">Show media player as a notification\nRequires a SystemUI restart</string>
+
+    <!-- Display : Rotation -->
+    <string name="display_rotation_title">Rotation settings</string>
+    <string name="display_rotation_enabled">Auto-rotation is enabled</string>
+    <string name="display_rotation_disabled">Auto-rotation is disabled</string>
+    <string name="display_rotation_unit">degrees</string>
+    <string name="display_rotation_category_title">Rotation modes</string>
+    <string name="display_rotation_0_title">0 degrees</string>
+    <string name="display_rotation_90_title">90 degrees</string>
+    <string name="display_rotation_180_title">180 degrees</string>
+    <string name="display_rotation_270_title">270 degrees</string>
+
+    <!-- Changelog -->
+    <string name="changelog_title">Changelog</string>
+    <string name="changelog_summary">Since the last update</string>
+    <string name="changelog_error">Unable to load changelog</string>
 </resources>
